@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>YUNGallery</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Roboto", sans-serif;
+            }
+            .nav-link {
+                @apply text-gray-600 hover:text-red-500 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+            }
+            .nav-link.active {
+                @apply text-red-500;
+            }
+            .btn-primary {
+                @apply bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-all duration-300 ease-in-out;
+            }
+            .btn-secondary {
+                @apply bg-transparent hover:bg-gray-100 text-gray-700 font-semibold py-3 px-6 rounded-md border border-gray-300 shadow-sm transition-all duration-300 ease-in-out;
+            }
+            .icon-btn {
+                @apply text-gray-500 hover:text-red-500 transition-colors;
+            }
+            .search-input {
+                @apply w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 placeholder-gray-400;
+            }
+            .brand-logo {
+                @apply h-8 object-contain grayscale hover:grayscale-0 transition-all duration-300;
+            }
+            .countdown-item {
+                @apply text-center;
+            }
+            .countdown-number {
+                @apply text-4xl font-bold text-gray-800;
+            }
+            .countdown-label {
+                @apply text-xs text-gray-500 uppercase;
+            }
+            .testimonial-card {
+                @apply bg-white p-6 rounded-lg shadow-lg;
+            }
+            .article-card {
+                @apply bg-white rounded-lg shadow-lg overflow-hidden transition-shadow hover:shadow-xl;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50">
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4">
+                <div
+                    class="flex justify-between items-center py-3 text-xs text-gray-500 border-b border-gray-200"
+                >
+                    <div>
+                        <span class="material-icons text-sm mr-1 align-middle"
+                            >phone</span
+                        >
+                        Call Us: 011-222-333
+                        <span
+                            class="material-icons text-sm ml-4 mr-1 align-middle"
+                            >email</span
+                        >
+                        Email: info@yunggallery.com
+                    </div>
+                    <div>Welcome to YungGallery</div>
+                    <div class="flex items-center space-x-3">
+                        <a class="hover:text-red-500" href="#"
+                            ><span class="material-icons text-base align-middle"
+                                >person</span
+                            ></a
+                        >
+                        <a class="hover:text-red-500" href="#"
+                            ><span class="material-icons text-base align-middle"
+                                >favorite_border</span
+                            ></a
+                        >
+                        <a class="hover:text-red-500" href="#"
+                            ><span class="material-icons text-base align-middle"
+                                >shopping_cart</span
+                            ></a
+                        >
+                    </div>
+                </div>
+                <div class="flex justify-between items-center py-4">
+                    <a class="text-3xl font-bold text-gray-800" href="#"
+                        >YUNG<span class="text-red-500">GALLERY</span></a
+                    >
+                    <nav class="flex space-x-2">
+                        <a class="nav-link active" href="#">HOME</a>
+                        <a class="nav-link" href="#">ABOUT</a>
+                        <a class="nav-link" href="#">SHOP</a>
+                        <a class="nav-link" href="#">BLOG</a>
+                        <a class="nav-link" href="#">PAGES+</a>
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="bg-gray-100 py-16 md:py-24 relative">
+            <div
+                class="container mx-auto px-4 flex items-center justify-between"
+            >
+                <div class="w-full md:w-1/2 relative z-10">
+                    <h1
+                        class="text-5xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight"
+                    >
+                        248 FORD MUSTANG
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Experience the thrill of the open road. Unmatched
+                        performance and iconic design.
+                    </p>
+                    <div class="flex space-x-4 mb-10">
+                        <a class="btn-primary" href="#">SHOP COLLECTION</a>
+                        <a class="btn-secondary" href="#">VIEW DETAILS</a>
+                    </div>
+                    <div class="relative max-w-md">
+                        <span
+                            class="material-icons absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                            >search</span
+                        >
+                        <input
+                            class="search-input"
+                            placeholder="Search..."
+                            type="text"
+                        />
+                    </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 relative">
+                    <img
+                        alt="Ford Mustang"
+                        class="w-full h-auto object-contain transform scale-110"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqzHWhA5exyU-rjfotH5vpH8_lWKe-DPPtO0-n3CmCaSm-ecb7N15tBrXuVhjmGKqHn-EnAlWQYi5NfKROZWZNqP4LleYO81_Yq3QHx5kkGpsFsCgDzB2q7glnhh-uZXaiGfL_d54EAF3iyLatpCv9bvCbj111vIpnoOeNPmp2VZRt5MyVzW5I_CqEmvzXPMlUFx1Gz4-MXAM55Un1uMdJ-vAeVEuM4v2A81Ueapywh4_7gFW8puXrOwy9lc4-Cfkc4WoQXOsBDkT3"
+                    />
+                </div>
+            </div>
+            <button
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-2 rounded-full bg-white shadow-md z-20"
+            >
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <button
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-2 rounded-full bg-white shadow-md z-20"
+            >
+                <span class="material-icons">chevron_right</span>
+            </button>
+        </section>
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <h2
+                    class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8"
+                >
+                    SHOP THE BEST NEW AND USED EXOTIC CARS, LUXURY CARS &amp;
+                    SPORTS CARS FOR SALE
+                </h2>
+                <div
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center"
+                >
+                    <img
+                        alt="Bentley Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhzLlleVvFY78qRDgaJYJKfocsI6qfEFgdMI6nwJq5c-4DkOft5197Nzm1yLLnLcwYssFdLU8nvux4Z-1Hq2px9B2oC85jwsO9dU0b90Jly0WSmPCaO0e57izvBtdAxFIM-Zgl8DQOw9ObGeAMHhqebsmVaEi8jMg9ctIVvXMn8y7ZXNeWsTsaO55aNoi2-kffPiEXY4NHU4u_EFyy10QAj7fm6jv3NpRxPtLGjnIhzJSY2XPGuljyRuv-GwNkYBA-eIJhT-k8diXg"
+                    />
+                    <img
+                        alt="Bugatti Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTvI8Qh_SCJJkTcKDyxpJnMrLgPia-ZS-LZ-LoE_dgWSiEpSCGNdpnCMxVnAA6Uis230U7Jp6X1X2Q1fB8pp52ypj73rajeIwB7qK_gLHLI5UqK3TgPaNlPQWoK_CjeY7ixVxrlDA-A9DUofxb3__0BtAtznJIAcVCVNw1N_ZB6IycDRXgLpeEDLC7YnX7B6JisqzO6nDupHWH4vrrsdU8UtPvG8HfwlKTctkZDNjvugKSPyL7f4SB8Cn--FlmXd1wV7zGYltsw3U2"
+                    />
+                    <img
+                        alt="Lamborghini Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbRwTkDbuZptqzpHXX-cgQ_CyXh9cATmY3XRD06ZsTxqoGYSQeTDLkm1FyOUVOiQKJ0hH6435Bzx5jh_oW8fyoVFkanor4MyB4oM98V9bxLvUTG9DLje14ibZVNWHFXfF2vpa4ZeyM6ZV_SUHYfeVgli6Xu0S3Oeo945lFkjbpf6Cglq5I4wT2ygZhCyayYmg_cyf5Skn3XV7AaLsjLit-QyFbdSa0G86w9CyvJj4NOuL5huck_bJ32pU4H4T8VxOdTIVkV5l-P9Xo"
+                    />
+                    <img
+                        alt="Ferrari Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsKQnnK1bEkoYB-HULy_y8qO9cx2ImUTn3GyObHGrhb3EQh3uZB6w4KRAi1Hvt95iJOzymD46XZexm0rCgJvt7mHWtqP9jO8aJ7Fvb2_ksDgxqmVHHQ_zXB3CyEpxBelmXn2kQQfURVJ_nNHTkCCVVGtC28GyyEaIlIANqxcLffJktfY0NBQoLYrwz-ZAk7Uz6ISKKhSvypH6fvlCxydYv0rBfku5dsTAAZsvqHkwoO8O9-A7D3lYZcn2gNJqZXjtPtYoKWdAdi9XL"
+                    />
+                    <img
+                        alt="McLaren Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6VgIsCtet8QhkIxaruQrRbf0vv1cDwxzMoAVuaaufkVSFnRGYl8vJGWaOLcM_SbzUXycD-upF_97Jbtxng3E0imaMDIqpLz6Z85Fz-PwG3H6tXOy04hNJLe_pauhOJvMwz_x8Dp8aAmcCR-aaIG7FURPUCGKXb002mMXP9Z9aEyJFF5RBG8KOluoGt0NaETHGQ2fpCd8TDRhctaXQQvPW2eY4CGAcCSpyluQkoZAbqmEgAKpf8jfb2KhjHMN8QJ2_gdE-JFGQlZq7"
+                    />
+                    <img
+                        alt="Maserati Logo"
+                        class="brand-logo mx-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkgpfltjYqqpovG0blwkCVaaSGQJab2q5qjGlP2q3Qqn1OgsVjhYIDiRynfpZvE5s-y25ZlNpH7RFpNDaRuPvW-I--6feMXrYJdIjnv2CLRVex18y2yq19N9ab5b_7YrVtRvS1qhQlEn1FEfuZLuwbyXL8k__vFYAWT2KpNqf_Knls_Uihx3EFGZHxnqxY13e5JRaxINOAjm5Jhqp8sFhbNjserHHJRhTwIKO4PmshwOoRfNTAntFBT9JgtP1owpDrhEbAFhVt8drq"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div
+                class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+            >
+                <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <img
+                        alt="Red Sports Car"
+                        class="w-full h-auto rounded-lg shadow-xl"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB60O8QeWshqXT_sb1EKJvftXio3PCgu20JKGD1KRYGHVEz5i54j3mz3_6l05mTY1sKG93l2quEQ5W52lqiV5hWKDq6Jw9lafVS3muJbjVLHm1C21fFRmCRK9q0wk4M9DGS82-MfPnXSIoU30VmAmuO71x5n15f9MzPf9qwKRQjCHYLf1vnUYxRV4OK17IDtcGMEuQRvvXf9yduwmatyn7Q-l2n2HdrXLhjA5J1M4v_a0jsPLemDaF566RiHISvSjpY-SyBLiUnAOH9"
+                    />
+                </div>
+                <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-800 mb-3"
+                    >
+                        15 LIMITED ORDER
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Don't miss out on this exclusive opportunity. Limited
+                        stock available.
+                    </p>
+                    <div
+                        class="flex justify-center md:justify-start space-x-4 sm:space-x-6 mb-8"
+                    >
+                        <div class="countdown-item">
+                            <div class="countdown-number">21</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">12</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">31</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">11</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                    <a class="btn-primary inline-block" href="#"
+                        >SHOP COLLECTION</a
+                    >
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">
+                    Shop by brand
+                </h2>
+                <div
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
+                >
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Alfa Romeo"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBnvCTMOuI4i8eQAfoO5LH9ku91m3rxl7aXDKG5y1G3xH5UjfG4TiPMYG9MDX5phFQgXyR3TPsXHjkM5GEujwHfmPurKvrLsz2A2LDqWRZaHUlDO16U8GJbURglSFm8WBEkUR8dYfUaZINAgVkC5YCAHruv4rb3X3V7adQ6QwjD8STu_7f5FnRVB-RKEJKPEy1uy1y8y4NTov1cutL2kLsno_r2g5BMbmQ8ComxdqSwsKDn9VxEr9t84y9rv5s-lXOAux4-mfuZY_"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Alfa Romeo</span
+                        >
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Aston Martin"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaJGZq9VoaGWVK6DvqYIhnHNb6eoPvmlrv5IQwob-IPM6oQ_sgORhtbVEj8AzSza86MuylwUr4QTYabTlLXQBEe0IuogU1jiYOdaGNT6aciBQBne2596Upp__PefTIFgUVh0CeR5GqxV8-c2VxwAQhDgr6jzMJfFxWBb8WpvYi0h_FQSY9j99P_gXkDcwO27bGwaLEGvoRYvGLuctQEYm0mBNP9lgH4jO8Qe9mXVNkDTIv_OC6uDAXjIpP5Y8OJGhDoO_dQ7htA-aX"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Aston Martin</span
+                        >
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Audi"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4v6_0aTK7qfsgzX7stVgJzXMkrG97FGEqC0Lq80P6a50c65QVCdXKPmZGVaTTlPDbCZvVrcbcj9ONeHj1wrNyVaAeBpmNhUzzNDNdjcfC169NHijqwnIXjNetWO5dUyi8n7KcaFIInU66izHxO4NW_DoWpgyWY1NbHQbXkZmJK5WBV61uIteeSNFrCHvywpHJQaesBR5Y44TgWELetO9k5W8cD-cQhw1pRe7ZmPGxxoWSTx7jEV4oI-TnnI8qQmZtHoNuK86EYU_S"
+                        />
+                        <span class="text-gray-700 font-medium">Audi</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Bentley"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBohHQIiF35YL0rxf5tsGMNWscHEFLwRj-d3cZ7tLipmt6BVfnICwDAIi_8W-qbAmytqg-x_ckEbtszIMDBKalUttKnMRBYWh1PaRonSKN-J3JKm8TlNw5CvcO5_FkBQSYC1ODSNqIlg0naos0oJ3iSAFR-8qmumAthZ51eRZ5DXipXdtt5QpaxBm6huDIjyz-o4-87AAAKKgK-5sL-delprAAfdhFO7NnPVh-p3OM8o69mnhjng_wG7eNO1NMDszd-oCqlnSm1eJcF"
+                        />
+                        <span class="text-gray-700 font-medium">Bentley</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="BMW"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz4PA0H2IGm-qi9popHiap-Xf9mmB38bYbxbk2AQSkk9h9-fZrPQOyH8i97HizIMjfM2eZYLpVkOMbIWRjIgKC5P6k6a5ZWB-16L_2YEqAP8f2_p70iPNwYzD3WSIHizqIQLTjpO1Iy6TqOtTQptdqRi4Bu63eQ90y8uYRIDAEBWngHGaAiCDbuSSieORvlA6qOkXSa0814_k2TMP1x4smcS80aVficvjQnpWgwi3VHJF5OJYJbbeSxS9CpekI1LpNNTNclgrhf2Sa"
+                        />
+                        <span class="text-gray-700 font-medium">BMW</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Bugatti"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6eBRuhx3p05GYYWNJH2ONUms5J_k-LyGvhnqf66NnAwUwnHGEF4oSA9Cb44etgRPUMIcpAbtjcryT3CgDfYAfFJ3C-flYH7VYv7HmTyApdE36Uk18RzN2Bt2nezWCYKvKp9Qge4BbEhyM7zQEszNg3jteaSCmy1kYRydpV08-gHLEMv77DPbovQ6zfii_b488fATFM2_Q-WFceeG7JeHfhTKToqfffMbzaOl8g994Isp0f2OfciaOEEYEVAnu8sMt_HGAe0q9NIC3"
+                        />
+                        <span class="text-gray-700 font-medium">Bugatti</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Cadillac"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUESa9HPfqUgb3TD2qWFgqYAUa6y1wTjCK6-7oVW7Axho2CjfJFjwnPAplrmfS1r20b4VDzC2HVtUyZZE3CjZw5Nncy8RH9qx-JyU14PZysr7Rx7JdKFJCDglMwDx8qzN31x4lNfyCDU9AMQ-Hpax59hYdbrRE8cV_ytr7Vo_2YpkicLD9nMDL0p_CIC9NpfQYlUCnG6KwTfmSC5l0l6s11ws_7qc3BgZDXhfJ8J2oeLfbXjJoTUKGT6uiDFDhJ25GhS0LY1W7DZjR"
+                        />
+                        <span class="text-gray-700 font-medium">Cadillac</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Ferrari"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF3FJJTnHDM7_Cnrr9xgIbA06a85OCksrAioGmXHwfaEQmkEowc_HXhHDdCE5digTBkkkaSjiWQJWvla7vZ_vn_8Kj2Y1D790LFly9i0MeUztK37mVylESnsIFJE7tAb7Igxmy3wcU2cqj0aD8qD13J8XhhJJvI2F9GVbSlcHl0RCgLaoC8YbNtHynGTYsf2RFTR7X4HNjLR5EWAwxv_xmvbUR921MliP9r9jmSKijaUKkumhT0_jfx5KGyxs12TTWCikfC1Hsy_FZ"
+                        />
+                        <span class="text-gray-700 font-medium">Ferrari</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Ford"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2wj5oitwD1TQBRDhmIjsU_s9erWvAjzG_3SCyuWzHpM8J3_P0vPLYj7WOpEWSSChEGFtU5CNlrgDCp92AjjHsg0EsC2-MqdaaBaHlcLwI7TV-IIrG0tfYK8-RFhpTO05aSWOYIl4iBnIxXMSPeKp6GHu6zOzFVw-16zpHFtCXnW2pKmu_3_VE-uWOq2oMNozORtybaq_KvmbwRhOxRSytcKmLC71JnP-CaJSI_17H5LADFqLLt9dtxVcFMCfujH8TcAPCrCZDOCda"
+                        />
+                        <span class="text-gray-700 font-medium">Ford</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Lamborghini"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVMbZrYEfzo-lRIUknq5GJdpp5UjwkpfslMWfkeFodeRZlXfCE7g_keQCkDg2Gxy8R7oWGw_oe589C9v5J3cyCXCle6gRGpccuWOVi2u_AiujQhownptYoBnHDrxhAqR2_l1Oy-ijWxLUlQU14l989fIp36sJu7iyExHf327Mj3htYbr5IyXwiHRxN62Z1i-UrMOS4Y-h2ZQy47yLMmTuMhmUyvwLnS4776f4eHL5uNL0Os7vWV0TLtZQiOiGaSb0_mIeXYjronI2u"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Lamborghini</span
+                        >
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Land Rover"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9tVf8-KFAGvhiMlUsHXW01vOF0KcXbf5VqpzFS5h-MbF9kRX5Ohd5b2789GCzIeAnWLWPNYTSQVOecUuvEUFghi7vucdlGiVb9MiFOdJxqA_9CyVLP139-DtfIGzVGL0A3xzGFcR44mDX8D-LeXT9s9lAthvkRXVDrV_oOH4r_xAFA6bf6WwE4RH0WzMNSgzre_kzrINcLHNCdhZ_2BIpfh-SoUpdPzH2K6ohomxcK2auIYlrmoh9x4BCNTXO_kEfRsww9ccgTEzc"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Land Rover</span
+                        >
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="McLaren"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADzniR0O6hRuD7r1VVqrz9r5AXrJm9_isX9px6MHVZQrQKsDeuk9mZrw25zW04-iaO0LGyK9HAlwpboJhuCds5mQxHuC1n3nEJ5R-HasTZnlhZb3woxbLFyDQs16FgnJjQ6IaDsW4pQQ0qv-gj0b1EZdiCzXrelYEVAHM1fRfbqPiavWafWYSNGqOK3pLUi3VwbtcEW5DxB2oIE_REr_bRSqGVQsByfbE9o0o_XRoivAsi-SOQQcdX_ufoJGOiWCwojwMf0r9zxcIX"
+                        />
+                        <span class="text-gray-700 font-medium">McLaren</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Mercedes-Benz"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffJIK1mtoexJXp5XQHLDoFIhg8OIrUfC47R0V_g2jaVb4apZwSXBuctyk4_wgmpbB-HboX8WBpPTdhlMpzQiUbhBbK5LDvL2TrUbmrlfa7KN5UjfZ4-PRryGRdoA2cUh7fFBRg6b92bg1X9Te4x0yLBiBxE99pWwmJAIDUEqFKz0-DWaNqtecYrhn_LZg76HDoGXpEoWVqlEo9a_hUp81F3taC3rJdp_YHVJKQc8NhodwOAC4FqTgzN6A0NesjBb1uUrcngv-tAnV"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Mercedes-Benz</span
+                        >
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Maserati"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZk_MOSEVh--2MaiT-7surD75GKS1hFChSk1N6NPEMxOXVbkUJGOkuLTbxT4uYNnRcmNYM55y_Nf56mF2YliWqmOpjZMYma4fo-hynh1H53hvNO4OWpRwBYlfyCMfA_9pNa1LbFvLG9yQ8wqsbRQzAk1uAG7VciMv6_kZzkUPnA0r9Fq-I1lWvKkwnmapkn2GMgXcHHHPbMymZ3nX9rNP2wttfLJeAUNPBYPuNLArGJZ6PkPdiDBVIQn-lYZEFNhOL0SG_iH-FFmVP"
+                        />
+                        <span class="text-gray-700 font-medium">Maserati</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Porsche"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY0yAkfYeVEDFshlwV_vPT34dCF3BspAKSdpVJg3-34olbYHudrqQxlFmjirAq__TMVcK-BRDxzjTnu2bQdRbKl3IuiYqNAceK9hN5S3_guZmqzL6rKH0arCJSxQUElQAgqFcUkhaJ7kYtmcMYIluNiUbfqbADa2CHdpel6Ri4xJG1n7FmQord6BEbkDOyluABMaY8f40uqa2A3wAU3BltS9aObVIi6Is6PjNg-gkpnofLcpQvWzhvDCAya0A7DlIg1EKJ26BCuDDn"
+                        />
+                        <span class="text-gray-700 font-medium">Porsche</span>
+                    </a>
+                    <a
+                        class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:shadow-md hover:border-red-500 transition-all"
+                        href="#"
+                    >
+                        <img
+                            alt="Rolls Royce"
+                            class="h-8 w-8 object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ3jAPeejkYcbGygioIcMl7iCco4MgXWjbHoFKL8BLj5MOtvLinoQ2flP1IwhLVT2fERfnytzoSDvmsBKcaHx7kAd8Gtp5F3Qza_b9e8FriOGVwPvHqpu_8zfjTi5aQqUfgQXZHr-P1Ms1a2pdCQZNr0Hltn7rVI8dqy2nSxVySLvDyKG2PdBHtoKj5NUgTFzJHfT51aTXCL6KqrPTM7l9-ch9NzA4_E7mcrd0kf3KI6V0lEfglBd_ZCQz47VyJ2lepgX3FdaXaxO0"
+                        />
+                        <span class="text-gray-700 font-medium"
+                            >Rolls Royce</span
+                        >
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 md:py-24 bg-gray-800 text-white">
+            <div
+                class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+            >
+                <div
+                    class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-center md:text-left"
+                >
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        READY TO SELL YOUR SUPERCAR?
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-8">
+                        YUNGGALLERY's Private Client Program offers competitive
+                        prices, discretion, and a seamless experience for
+                        sellers.
+                    </p>
+                    <a class="btn-primary inline-block" href="#"
+                        >GET YOUR OFFER</a
+                    >
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img
+                        alt="Silver Sports Car"
+                        class="w-full h-auto rounded-lg shadow-xl"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw3LY69d6rOtGRj7_Z2Omh5JR5TakBNiN2vxyNS8GxH3ADUbIOyCPgUjEYjqroa9yhxDX2lot4qyN63xoQVnybf6n9OS9cGGDM5_EdbMIOetZp5JcE1l1Jry6AlqpHTn4RN-TdGXBhJtFgJFn7LyH0b-jL7tBytwrM4ycmvbdPgB38ILV9WcNTLZkYa4MqzzysFmw4Dz1eBnq3aK4v-Y6tLeSvhZPg3OrZ_CNa3r96b2hTZLlQmUuHVj0pr1v6fxRuMDI6YSpQVuwW"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-100 relative">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-2">
+                    CUSTOMERS REVIEWS
+                </h2>
+                <p class="text-gray-600 text-center mb-10">
+                    What our clients say about their experience with
+                    YUNGGALLERY.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-3">
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                        </div>
+                        <p class="text-gray-600 mb-4 italic">
+                            "Stumbled upon this showroom while browsing for a
+                            new supercar, and I'm so glad I did! The staff were
+                            incredibly knowledgeable about the cars and made the
+                            entire buying process a breeze. Highly recommend!"
+                        </p>
+                        <p class="font-semibold text-gray-800">Jane Doe</p>
+                        <p class="text-sm text-gray-500">Enthusiast</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-3">
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-gray-300"
+                                >star_border</span
+                            >
+                        </div>
+                        <p class="text-gray-600 mb-4 italic">
+                            "This is my go-to place for rare and exotic cars.
+                            The selection is unparalleled, and the team always
+                            goes above and beyond. Their expertise with high-end
+                            cars is truly impressive. I've bought multiple cars
+                            here."
+                        </p>
+                        <p class="font-semibold text-gray-800">Timothy John</p>
+                        <p class="text-sm text-gray-500">Collector</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-3">
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                            <span class="material-icons text-yellow-400"
+                                >star</span
+                            >
+                        </div>
+                        <p class="text-gray-600 mb-4 italic">
+                            "I recently bought a limited-edition GT, and the
+                            team at YUNGGALLERY were fantastic. They answered
+                            all my questions and helped me find the true dream
+                            car. The process was smooth and transparent."
+                        </p>
+                        <p class="font-semibold text-gray-800">Sarah Lee</p>
+                        <p class="text-sm text-gray-500">First-time Buyer</p>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-2 rounded-full bg-white shadow-md"
+            >
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <button
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-2 rounded-full bg-white shadow-md"
+            >
+                <span class="material-icons">chevron_right</span>
+            </button>
+        </section>
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">
+                    EXCLUSIVE REVIEWS
+                </h2>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+                >
+                    <div class="article-card">
+                        <img
+                            alt="Luxury Unleashed Off-Roading"
+                            class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ_WESyb2TQXuUQx60blIwU6aGdLfDCXBQy1HCbU7SraJ6mBo0BWkVJNcplKWib9TjImifZZz5VGSavoPAI7LvgYjy_fTQmDg96DQyMC1w8sKq5Vz15_wlp3A6ywqSKwT3EMpS6CUVXgOSaC1Ew2x2oF-mOrVdUBLbVX_K_R-wm8ui9iRM2PiYUOnxQQYEQi5V48t2272uGT6YcUsWAf6W8NIXPNUDnT6jcMQ3bgK05YYaYSDQ781yfmYWGWHgBlitbHimhSkP4LGn"
+                        />
+                        <div class="p-6">
+                            <span
+                                class="text-xs text-red-500 font-semibold uppercase"
+                                >Lifestyle</span
+                            >
+                            <h3
+                                class="text-xl font-semibold text-gray-800 my-2"
+                            >
+                                LUXURY UNLEASHED: OFF-ROADING IN STYLE
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                The Land Rover Defender conquered rugged
+                                terrains with comfort and sophistication.
+                                Discover the ultimate adventure.
+                            </p>
+                            <a
+                                class="text-red-500 font-medium hover:underline"
+                                href="#"
+                                >Read More
+                                <span
+                                    class="material-icons text-sm align-middle"
+                                    >arrow_forward</span
+                                ></a
+                            >
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img
+                            alt="Elegance at Full Throttle"
+                            class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSHznCup2FMcq1kklR6QIMPv0gFXna2gRJXHEvS_diFrJQdOAXrJdW5-0gPBzUj4fV14XMk8N2mp3y4FajPXbtAnqv3jc3jIglQ7aUoDJG81DdmyG5uUeBjDLUUsPoFHfYAYKocrkmjqMDYTuSPZHmtgLl5hRaKFIuTveticj_bRefjfsnklLEqa3TvPSqdXJQcUO2UNHA5bXMhdc6yrZU5mupe5oaNTp4Dl7glpYxpnEmieDKbkoEzRSQusrez9wz_m0aQmAoitno"
+                        />
+                        <div class="p-6">
+                            <span
+                                class="text-xs text-red-500 font-semibold uppercase"
+                                >Drives</span
+                            >
+                            <h3
+                                class="text-xl font-semibold text-gray-800 my-2"
+                            >
+                                ELEGANCE AT FULL THROTTLE: THE NEW DB12
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Experience Aston Martin's latest masterpiece,
+                                the DB12. A perfect blend of power, luxury, and
+                                timeless design.
+                            </p>
+                            <a
+                                class="text-red-500 font-medium hover:underline"
+                                href="#"
+                                >Read More
+                                <span
+                                    class="material-icons text-sm align-middle"
+                                    >arrow_forward</span
+                                ></a
+                            >
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img
+                            alt="Peak Performance McLaren"
+                            class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_XaMwph9L_40HIlr3e6tiLy5LZ1LaZKq4Rf2v3MrjiDyN1MpFVs_9fjpdS6FG7S7ft6xeG5BGQHdG-xhO_KxURfkVWiFXPn-qIO5vSjOx_Tz5bkGOCriK8WuTJU-wF-5ORC7pre7BL966veusH-OVKXrNQMc0_opo2RVRDF9VHE3ACk4fNl6bozcnRREodmoIscr4_kn5Xl2j5mTrC3GocSj67Ecut_dsqSgwJjAdThw8c0MNUn7o_CGqsEoAofqyEFlB0Xns6ed8"
+                        />
+                        <div class="p-6">
+                            <span
+                                class="text-xs text-red-500 font-semibold uppercase"
+                                >Performance</span
+                            >
+                            <h3
+                                class="text-xl font-semibold text-gray-800 my-2"
+                            >
+                                PEAK PERFORMANCE: MCLAREN ARTURA REVIEW
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Inside the innovation of high-altitude driving
+                                with McLaren's Artura. Pushing boundaries with
+                                hybrid technology.
+                            </p>
+                            <a
+                                class="text-red-500 font-medium hover:underline"
+                                href="#"
+                                >Read More
+                                <span
+                                    class="material-icons text-sm align-middle"
+                                    >arrow_forward</span
+                                ></a
+                            >
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <img
+                            alt="Grace at Speed Rolls Royce"
+                            class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3q_TBhYYqSUMKOKHwLayP84syMt3DX5CQxV5UZXOE59ZcxPntOXoNDm3SpeZ7wGt_1BxH74kVDVW9R_46vp2bYC8qj6Bbku9boPvrLSmk6gn1Kf6bOn7kcBohKaXnR5ClcBwHC6KrZD0XJDR_bdlGZVN92E7U-ZNDXDfxZCMh4l4P-0zrGhnzn0XBT7Ynxtboyt_kNAXkEG_1jc7hti7J26va1bLlJF-TP7O2qu1BD7umoLoYV1VTJm3VI-5nsUxmPpXmjeDuFty_"
+                        />
+                        <div class="p-6">
+                            <span
+                                class="text-xs text-red-500 font-semibold uppercase"
+                                >Luxury</span
+                            >
+                            <h3
+                                class="text-xl font-semibold text-gray-800 my-2"
+                            >
+                                GRACE AT SPEED: ROLLS-ROYCE SPECTRE
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                An in-depth look at the first all-electric
+                                Rolls-Royce. Redefining luxury mobility for a
+                                new era. Quietly powerful.
+                            </p>
+                            <a
+                                class="text-red-500 font-medium hover:underline"
+                                href="#"
+                                >Read More
+                                <span
+                                    class="material-icons text-sm align-middle"
+                                    >arrow_forward</span
+                                ></a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                    SUBSCRIBE NOW
+                </h2>
+                <p class="text-gray-600 mb-8">
+                    Be the first to know about new listings, exclusive offers,
+                    and events!
+                </p>
+                <form class="max-w-lg mx-auto flex">
+                    <input
+                        class="flex-grow p-3 border border-gray-300 rounded-l-md focus:ring-red-500 focus:border-red-500 placeholder-gray-400"
+                        placeholder="Email Address"
+                        required=""
+                        type="email"
+                    />
+                    <button class="btn-primary rounded-l-none" type="submit">
+                        SUBMIT
+                    </button>
+                </form>
+            </div>
+        </section>
+        <footer class="bg-gray-800 text-gray-300 py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">
+                            YUNG<span class="text-red-500">GALLERY</span>
+                        </h3>
+                        <p class="text-sm mb-2">
+                            123 Car Street, Bikin Bottom, USA
+                        </p>
+                        <p class="text-sm mb-2">
+                            <span
+                                class="material-icons text-sm mr-1 align-middle"
+                                >phone</span
+                            >
+                            011-222-333
+                        </p>
+                        <p class="text-sm">
+                            <span
+                                class="material-icons text-sm mr-1 align-middle"
+                                >email</span
+                            >
+                            info@yunggallery.com
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">
+                            QUICK LINKS
+                        </h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Our Team</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Services</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">
+                            HELP &amp; INFO
+                        </h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Track Your Order</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Returns Policies</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >Shipping + Delivery</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="hover:text-red-500 transition-colors"
+                                    href="#"
+                                    >FAQs</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">
+                            CONTACT US
+                        </h4>
+                        <p class="text-sm">
+                            For inquiries or support, please reach out to our
+                            team. We're here to assist you.
+                        </p>
+                        <p class="text-sm mt-2">Mon - Fri: 9am - 6pm</p>
+                        <p class="text-sm">Sat: 10am - 4pm</p>
+                        <p class="text-sm">Tel: 011-222-333</p>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm"
+                >
+                    <p>
+                        We ship with:
+                        <span class="font-semibold">---</span> Payment options:
+                        <span class="font-semibold">---</span>
+                    </p>
+                    <p>© 2025 YUNGGALLERY. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

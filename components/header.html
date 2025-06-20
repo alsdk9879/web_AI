@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>header</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="contact-info">
+                            <span>Need help? Call us 111-222-333</span>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <span>Welcome to YungGallery</span>
+                        <!-- 로그인 상태에 따른 UI 변경 -->
+                        <div id="auth-section">
+                            <div id="login-section">
+                                <a href="#" class="sign-in" id="openModal"
+                                    >Sign In/Up</a
+                                >
+                            </div>
+                            <div id="user-section" class="user-info">
+                                <span id="username">환영합니다!</span>
+                                <button class="logout-btn" id="logoutBtn">
+                                    로그아웃
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 로그인/회원가입 모달 -->
+        <div id="authModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <!-- 로그인 폼 -->
+                <div id="loginForm" class="auth-form">
+                    <h2>로그인</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="loginEmail">이메일</label>
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">비밀번호</label>
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                required
+                            />
+                        </div>
+                        <div class="error-message" id="loginError"></div>
+                        <button type="submit" class="btn-auth">로그인</button>
+                    </form>
+                    <div class="auth-switch">
+                        <a id="showSignup">계정이 없으신가요? 회원가입</a>
+                    </div>
+                </div>
+
+                <!-- 회원가입 폼 -->
+                <div id="signupForm" class="auth-form" style="display: none">
+                    <h2>회원가입</h2>
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="signupName">이름</label>
+                            <input
+                                type="text"
+                                id="signupName"
+                                name="name"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">이메일</label>
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                name="email"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword"
+                                >비밀번호 (최소 6자)</label
+                            >
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                name="password"
+                                required
+                                minlength="6"
+                            />
+                        </div>
+                        <div class="error-message" id="signupError"></div>
+                        <div class="success-message" id="signupSuccess"></div>
+                        <button type="submit" class="btn-auth">회원가입</button>
+                    </form>
+                    <div class="auth-switch">
+                        <a id="showLogin">이미 계정이 있으신가요? 로그인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shop - YUNGGALLERY</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        />
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header"></div>
+
+        <!-- Nav -->
+        <div id="nav"></div>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>SHOP</h1>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> > <span>Shop</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Content -->
+        <section class="shop-content">
+            <div class="container">
+                <div class="shop-layout">
+                    <!-- Sidebar Filters -->
+                    <div class="shop-sidebar">
+                        <!-- Search -->
+                        <div class="filter-section">
+                            <div class="filter-search">
+                                <input type="text" placeholder="Search" />
+                                <button type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Make Filter -->
+                        <div class="filter-section">
+                            <h4>MAKE</h4>
+                            <ul class="filter-list">
+                                <li><a href="#">All Makes</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Model Filter -->
+                        <div class="filter-section">
+                            <h4>MODEL</h4>
+                            <ul class="filter-list">
+                                <li><a href="#">All Models</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-section">
+                            <h4>PRICE</h4>
+                            <div class="price-range">
+                                <div class="range-slider">
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="1000000"
+                                        value="0"
+                                        class="range-min"
+                                    />
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="1000000"
+                                        value="1000000"
+                                        class="range-max"
+                                    />
+                                </div>
+                                <div class="range-labels">
+                                    <span>Min price</span>
+                                    <span>Max price</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mileage Filter -->
+                        <div class="filter-section">
+                            <h4>MILEAGE</h4>
+                            <div class="range-slider">
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="200000"
+                                    value="0"
+                                    class="range-min"
+                                />
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="200000"
+                                    value="200000"
+                                    class="range-max"
+                                />
+                            </div>
+                            <div class="range-labels">
+                                <span>Min</span>
+                                <span>Max</span>
+                            </div>
+                        </div>
+
+                        <!-- Year Filter -->
+                        <div class="filter-section">
+                            <h4>YEAR</h4>
+                            <div class="range-inputs">
+                                <input
+                                    type="number"
+                                    placeholder="Min"
+                                    min="1900"
+                                    max="2024"
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="Max"
+                                    min="1900"
+                                    max="2024"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Condition Filter -->
+                        <div class="filter-section">
+                            <h4>CONDITION</h4>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" /> New</label>
+                                <label><input type="checkbox" /> Used</label>
+                            </div>
+                        </div>
+
+                        <!-- Exterior Color Filter -->
+                        <div class="filter-section">
+                            <h4>EXTERIOR COLOR</h4>
+                            <div class="color-grid">
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box black"></span>
+                                    Black</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box white"></span>
+                                    White</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box red"></span>
+                                    Red</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box orange"></span>
+                                    Orange</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box gold"></span>
+                                    Gold</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box other"></span>
+                                    Other</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box gray"></span>
+                                    Gray</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box blue"></span>
+                                    Blue</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box green"></span>
+                                    Green</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box brown"></span>
+                                    Brown</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box silver"></span>
+                                    Silver</label
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Interior Color Filter -->
+                        <div class="filter-section">
+                            <h4>INTERIOR COLOR</h4>
+                            <div class="color-grid">
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box black"></span>
+                                    Black</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box white"></span>
+                                    White</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box red"></span>
+                                    Red</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box orange"></span>
+                                    Orange</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box gold"></span>
+                                    Gold</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box other"></span>
+                                    Other</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box gray"></span>
+                                    Gray</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box blue"></span>
+                                    Blue</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box green"></span>
+                                    Green</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box brown"></span>
+                                    Brown</label
+                                >
+                                <label
+                                    ><input type="checkbox" />
+                                    <span class="color-box silver"></span>
+                                    Silver</label
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="shop-main">
+                        <!-- Results Header -->
+                        <div class="results-header">
+                            <div class="results-count">
+                                <span>Showing 1-9 of 55 results</span>
+                            </div>
+                            <div class="sort-options">
+                                <select>
+                                    <option>Default sorting</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Newest First</option>
+                                    <option>Oldest First</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Products Grid -->
+                        <div class="products-grid">
+                            <!-- Product 1 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="2021 Ferrari SF90 Stradale"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >2021 Ferrari SF90 Stradale</a
+                                        >
+                                    </h3>
+                                    <div class="product-price">$460,000</div>
+                                    <div class="product-mileage">607 Miles</div>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="2025 Bentley Continental GT Speed"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >2025 Bentley Continental GT
+                                            Speed</a
+                                        >
+                                    </h3>
+                                    <div class="product-price">$385,122</div>
+                                    <div class="product-mileage">13 Miles</div>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="2023 Rolls-Royce Cullinan"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >2023 Rolls-Royce Cullinan</a
+                                        >
+                                    </h3>
+                                    <div class="product-price">$376,025</div>
+                                    <div class="product-mileage">
+                                        4,579 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="2014 McLaren P1"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >2014 McLaren P1</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        2,909 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="2024 Bentley Continental GT Speed"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >2024 Bentley Continental GT
+                                            Speed</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        3,200 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 6 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="1999 Ferrari F355 Spider"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >1999 Ferrari F355 Spider</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        18,567 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 7 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="1956 Jaguar XK 140"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >1956 Jaguar XK 140</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        74,976 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 8 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="1954 Mercedes-Benz 190 SL"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >1954 Mercedes-Benz 190 SL</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        52,987 Miles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 9 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1566473965997-3de9c817e938?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                        alt="1995 Porsche 911 Carrera Cabriolet"
+                                    />
+                                    <div class="product-overlay">
+                                        <a
+                                            href="product.html"
+                                            class="quick-view-btn"
+                                        >
+                                            Quick View
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>
+                                        <a href="product.html"
+                                            >1995 Porsche 911 Carrera
+                                            Cabriolet</a
+                                        >
+                                    </h3>
+                                    <div class="product-price call-for-price">
+                                        Call for Price
+                                    </div>
+                                    <div class="product-mileage">
+                                        27,789 Miles
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <a href="#" class="page-link prev">Prev</a>
+                            <a href="#" class="page-link">1</a>
+                            <a href="#" class="page-link active">2</a>
+                            <a href="#" class="page-link">3</a>
+                            <a href="#" class="page-link next">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <!-- script -->
+        <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/components.js"></script>
+    </body>
+</html>

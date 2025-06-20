@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Premium Exotic Cars</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            #main {
+                height: calc(100vh - 150px);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header"></div>
+
+        <!-- Nav -->
+        <div id="nav"></div>
+
+        <!-- main -->
+        <main id="main">
+            <h1>내가 좋아요한 상품</h1>
+            <ul id="likeList"></ul>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/components.js"></script>
+        <script>
+            async function loadLikes() {
+                // if (!skapi.user) {
+                //     alert("로그인이 필요합니다.");
+                //     return;
+                // }
+
+                try {
+                    const res = await skapi.getRecords({
+                        table: {
+                            name: "likes",
+                            access_group: "private",
+                        },
+                    });
+                    console.log("res : ", res);
+
+                    const list = document.getElementById("likeList");
+                    if (res.list.length === 0) {
+                        list.innerHTML =
+                            '<li class="empty">좋아요한 상품이 없습니다.</li>';
+                        return;
+                    }
+
+                    res.list.forEach((item) => {
+                        console.log("item : ", item);
+                        const li = document.createElement("li");
+                        li.textContent = `상품 ID: ${item.unique_id}`;
+                        list.appendChild(li);
+                    });
+                } catch (err) {
+                    console.error(err);
+                    alert("목록을 불러오지 못했습니다.");
+                }
+            }
+
+            loadLikes();
+        </script>
+    </body>
+</html>

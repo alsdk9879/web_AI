@@ -1,0 +1,590 @@
+/* css/style.css (General styles for header, footer, typography, etc.) */
+:root {
+    --primary-color: #f00; /* Example red from design */
+    --secondary-color: #333;
+    --text-color: #555;
+    --light-grey: #f8f8f8;
+    --border-color: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+.top-bar {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.main-nav {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color); /* Assuming logo is red */
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.nav-icons i {
+    margin-left: 20px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+/* Page Title Section */
+.page-title {
+    background-color: var(--light-grey);
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.page-title p a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.page-title p a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: darken(
+        var(--primary-color),
+        10%
+    ); /* This would require a CSS preprocessor, just an idea */
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-grey);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 50px 0 20px;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-col .social-icons a {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-col .social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom img {
+    height: 25px; /* Adjust as needed */
+    margin-left: 10px;
+}
+
+/* css/cart.css (Specific styles for the cart page) */
+.cart-content {
+    padding: 50px 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.cart-header > div {
+    flex: 1;
+    text-align: left;
+}
+
+.cart-header .quantity-col {
+    flex: 0.5; /* Adjust column widths as needed */
+    text-align: center;
+}
+.cart-header .subtotal-col {
+    flex: 0.5;
+    text-align: right;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item .item-details {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.cart-item .item-details img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.cart-item .item-info h3 {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.cart-item .item-info p {
+    color: var(--primary-color); /* Price color */
+    font-weight: bold;
+}
+
+.cart-item .item-quantity {
+    display: flex;
+    align-items: center;
+    flex: 0.5;
+    justify-content: center;
+}
+
+.cart-item .item-quantity button {
+    background-color: var(--light-grey);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 3px;
+}
+
+.cart-item .item-quantity span {
+    margin: 0 10px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.cart-item .item-subtotal {
+    flex: 0.5;
+    text-align: right;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.cart-item .pending-status {
+    color: orange; /* Example color for pending */
+    font-weight: normal;
+}
+
+.cart-item .remove-item {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.remove-item:hover {
+    color: var(--primary-color);
+}
+
+.order-summary {
+    background-color: var(--light-grey);
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.order-summary h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.order-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.order-summary .summary-row .amount {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.order-summary .small-text {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.cart-actions .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* checkout */
+/* css/checkout.css (Specific styles for the checkout page) */
+.checkout-content {
+    padding: 50px 0;
+}
+
+.checkout-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Space between the two main columns */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.billing-details,
+.additional-info-and-totals {
+    flex: 1;
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.billing-details h2,
+.additional-information h2,
+.cart-totals h2 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Cart Totals Specifics */
+.cart-totals {
+    background-color: var(--light-grey);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.cart-totals .total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.cart-totals .total-row .amount {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.cart-totals .deposit-row {
+    border-top: 1px dashed var(--border-color); /* Dashed line for deposit */
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.payment-methods {
+    margin-top: 30px;
+}
+
+.payment-option {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px; /* Space for custom radio button if styled */
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Adjust alignment with text */
+    /* Hide default radio and style custom one if desired */
+}
+
+.payment-option label {
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-bottom: 5px; /* Space between label and description */
+}
+
+.payment-option .payment-description {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+    padding-left: 20px; /* Indent description */
+}
+
+.payment-option .paypal-logo {
+    height: 20px; /* Adjust PayPal logo size */
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.place-order-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px 0;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none; /* Hide navigation on small screens, consider a hamburger menu */
+    }
+
+    .main-nav .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav .logo,
+    .nav-icons {
+        margin-bottom: 15px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item .item-details {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .cart-item .item-quantity,
+    .cart-item .item-subtotal {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .cart-item .remove-item {
+        align-self: flex-end;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .cart-actions .btn {
+        margin: 10px 0;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h3 {
+        text-align: center;
+    }
+
+    .footer-col ul {
+        padding-left: 0;
+    }
+
+    /* checkout */
+    .checkout-form {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .billing-details,
+    .additional-info-and-totals {
+        min-width: unset; /* Remove min-width to allow full width */
+        width: 100%;
+    }
+}
