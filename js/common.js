@@ -1,15 +1,5 @@
-// const skapi = new Skapi(
-//     "ap21oXtB1xRBgGkPR98Z",
-//     "f498d188-1fa5-43e5-a32d-904d3e125983"
-// );
-
-// const skapi = new Skapi(
-//     "ap21oXtB1xRBgGkPR98Z",
-//     "80b7a637-0258-4701-9cef-68ad6ed43b7f"
-// );
-
 const skapi = new Skapi(
-    "ap22oXyLKpt5tVv70zmZ",
+    "ap222AtpuBBsCowTgi5D",
     "bf305ace-03b5-4f9d-b88f-291458748ca3"
 );
 

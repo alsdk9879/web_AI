@@ -1,428 +1,636 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>YUNGGALLERY - Checkout</title>
-        <link rel="stylesheet" href="../css/style2.css" />
-        <link rel="stylesheet" href="../css/checkout.css" />
+        <title>Checkout - YungGallery</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
         <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
+        <style>
+            .checkout-page {
+                padding: 80px 0;
+                background: #f8f8f8;
+                min-height: 100vh;
+            }
+
+            .checkout-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .checkout-header h1 {
+                font-size: 48px;
+                font-weight: 300;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .breadcrumb {
+                color: #666;
+                font-size: 14px;
+            }
+
+            .breadcrumb a {
+                color: #666;
+                text-decoration: none;
+            }
+
+            .checkout-container {
+                display: grid;
+                grid-template-columns: 1fr 400px;
+                gap: 40px;
+                align-items: start;
+            }
+
+            .billing-section {
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .section-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            .form-label {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+            }
+
+            .form-input {
+                width: 100%;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 16px;
+                transition: border-color 0.3s ease;
+                box-sizing: border-box;
+            }
+
+            .form-input:focus {
+                outline: none;
+                border-color: #ff6b35;
+                box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+            }
+
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .form-select {
+                width: 100%;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 16px;
+                background: white;
+                cursor: pointer;
+            }
+
+            .additional-info {
+                margin-top: 40px;
+            }
+
+            .textarea {
+                min-height: 120px;
+                resize: vertical;
+                font-family: inherit;
+            }
+
+            .cart-summary {
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 20px;
+            }
+
+            .summary-title {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 30px;
+                color: #333;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .summary-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .summary-row:last-of-type {
+                border-bottom: none;
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 2px solid #eee;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .summary-label {
+                font-size: 14px;
+                color: #666;
+                text-transform: uppercase;
+            }
+
+            .summary-value {
+                font-size: 16px;
+                font-weight: 600;
+                color: #ff6b35;
+            }
+
+            .payment-methods {
+                margin: 30px 0;
+            }
+
+            .payment-option {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 15px;
+                padding: 15px;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .payment-option:hover {
+                border-color: #ff6b35;
+                background: rgba(255, 107, 53, 0.05);
+            }
+
+            .payment-option input[type="radio"] {
+                margin: 0;
+            }
+
+            .payment-option.selected {
+                border-color: #ff6b35;
+                background: rgba(255, 107, 53, 0.1);
+            }
+
+            .btn-place-order {
+                width: 100%;
+                padding: 18px;
+                background: #ff6b35;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .btn-place-order:hover {
+                background: #e55a2b;
+                transform: translateY(-2px);
+            }
+
+            .shipping-info {
+                font-size: 12px;
+                color: #666;
+                margin-top: 15px;
+                line-height: 1.5;
+            }
+
+            @media (max-width: 1024px) {
+                .checkout-container {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                }
+
+                .cart-summary {
+                    position: static;
+                    order: -1;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .billing-section,
+                .cart-summary {
+                    padding: 20px;
+                }
+
+                .form-row {
+                    grid-template-columns: 1fr;
+                    gap: 15px;
+                }
+
+                .checkout-header h1 {
+                    font-size: 36px;
+                }
+            }
+        </style>
     </head>
     <body>
-        <header>
-            <div class="top-bar">
-                <div class="container">
-                    <p>Need Help? Call Us 111-222-333</p>
-                    <p>Where Speed Meets Style - Welcome to YungGallery</p>
-                    <div class="auth-links">
-                        <a href="#">Sign In/Up</a>
-                    </div>
-                </div>
-            </div>
-            <nav class="main-nav">
-                <div class="container">
-                    <a href="../index.html" class="logo">YUNGGALLERY</a>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#" class="active">SHOP</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">PAGES</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                    <div class="nav-icons">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-shopping-cart"></i>
-                        <i class="fas fa-heart"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <!-- header -->
+        <div id="header"></div>
 
-        <main>
-            <section class="page-title">
-                <div class="container">
+        <!-- Nav -->
+        <div id="nav"></div>
+
+        <!-- Checkout Page -->
+        <section class="checkout-page">
+            <div class="container">
+                <!-- Checkout Header -->
+                <div class="checkout-header">
                     <h1>CHECKOUT</h1>
-                    <p><a href="#">Home</a> > <a href="#">Shop</a></p>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a> > Shop
+                    </div>
                 </div>
-            </section>
 
-            <section class="checkout-content">
-                <div class="container">
-                    <form id="checkoutForm" class="checkout-form">
-                        <div class="billing-details">
-                            <h2>BILLING DETAILS</h2>
-                            <div class="form-group">
-                                <label for="firstName">First name *</label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    name="firstName"
-                                    required
-                                />
+                <div class="checkout-container">
+                    <!-- Billing Details -->
+                    <div class="billing-section">
+                        <h2 class="section-title">BILLING DETAILS</h2>
+
+                        <form id="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName"
+                                        >First name *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        class="form-input"
+                                        required
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName"
+                                        >Last name *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        class="form-input"
+                                        required
+                                    />
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <label for="lastName">Last name *</label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    name="lastName"
-                                    required
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="companyName"
+                                <label class="form-label" for="company"
                                     >Company name (optional)</label
                                 >
                                 <input
                                     type="text"
-                                    id="companyName"
-                                    name="companyName"
+                                    id="company"
+                                    class="form-input"
                                 />
                             </div>
+
                             <div class="form-group">
-                                <label for="country">Country / Region *</label>
-                                <input
-                                    type="text"
+                                <label class="form-label" for="country"
+                                    >Country / Region *</label
+                                >
+                                <select
                                     id="country"
-                                    name="country"
-                                    value="United States (US)"
+                                    class="form-select"
                                     required
-                                />
+                                >
+                                    <option value="US">
+                                        United States (US)
+                                    </option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="KR">South Korea</option>
+                                </select>
                             </div>
+
                             <div class="form-group">
-                                <label for="streetAddress"
+                                <label class="form-label" for="address1"
                                     >Street address *</label
                                 >
                                 <input
                                     type="text"
-                                    id="streetAddress"
-                                    name="streetAddress"
+                                    id="address1"
+                                    class="form-input"
                                     placeholder="House number and street name"
                                     required
                                 />
+                            </div>
+
+                            <div class="form-group">
                                 <input
                                     type="text"
-                                    id="apartment"
-                                    name="apartment"
-                                    placeholder="Apartments, suite, etc. (optional)"
+                                    id="address2"
+                                    class="form-input"
+                                    placeholder="Apartment, suite, etc."
                                 />
                             </div>
+
                             <div class="form-group">
-                                <label for="townCity">Town / City *</label>
+                                <label class="form-label" for="city"
+                                    >Town / City *</label
+                                >
                                 <input
                                     type="text"
-                                    id="townCity"
-                                    name="townCity"
+                                    id="city"
+                                    class="form-input"
                                     required
                                 />
                             </div>
+
                             <div class="form-group">
-                                <label for="state">State *</label>
+                                <label class="form-label" for="state"
+                                    >State *</label
+                                >
+                                <select id="state" class="form-select" required>
+                                    <option value="CA">California</option>
+                                    <option value="NY">New York</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="FL">Florida</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="zip"
+                                    >ZIP Code *</label
+                                >
                                 <input
                                     type="text"
-                                    id="state"
-                                    name="state"
-                                    value="Bikini Bottom"
+                                    id="zip"
+                                    class="form-input"
                                     required
                                 />
                             </div>
+
                             <div class="form-group">
-                                <label for="zipCode">ZIP Code *</label>
-                                <input
-                                    type="text"
-                                    id="zipCode"
-                                    name="zipCode"
-                                    required
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone *</label>
+                                <label class="form-label" for="phone"
+                                    >Phone *</label
+                                >
                                 <input
                                     type="tel"
                                     id="phone"
-                                    name="phone"
+                                    class="form-input"
                                     required
                                 />
                             </div>
+
                             <div class="form-group">
-                                <label for="email">Email address *</label>
+                                <label class="form-label" for="email"
+                                    >Email address *</label
+                                >
                                 <input
                                     type="email"
                                     id="email"
-                                    name="email"
+                                    class="form-input"
                                     required
                                 />
                             </div>
-                        </div>
 
-                        <div class="additional-info-and-totals">
-                            <div class="additional-information">
-                                <h2>ADDITIONAL INFORMATION</h2>
+                            <div class="additional-info">
+                                <h3 class="section-title">
+                                    ADDITIONAL INFORMATION
+                                </h3>
                                 <div class="form-group">
-                                    <label for="orderNotes"
+                                    <label class="form-label" for="orderNotes"
                                         >Order notes (optional)</label
                                     >
                                     <textarea
                                         id="orderNotes"
-                                        name="orderNotes"
-                                        rows="5"
+                                        class="form-input textarea"
                                         placeholder="Notes about your order for vehicle reservations or delivery instructions."
                                     ></textarea>
                                 </div>
                             </div>
+                        </form>
+                    </div>
 
-                            <div class="cart-totals">
-                                <h2>CART TOTALS</h2>
-                                <div class="total-row">
-                                    <span>SUBTOTAL (PRODUCTS)</span>
-                                    <span class="amount">$2400.00</span>
-                                </div>
-                                <div class="total-row deposit-row">
-                                    <span>DEPOSIT (VEHICLE)</span>
-                                    <span class="amount">$2400.00</span>
-                                </div>
+                    <!-- Order Summary -->
+                    <div class="cart-summary">
+                        <h3 class="summary-title">CART TOTALS</h3>
 
-                                <div class="payment-methods">
-                                    <div class="payment-option">
-                                        <input
-                                            type="radio"
-                                            id="directBankTransfer"
-                                            name="paymentMethod"
-                                            value="directBankTransfer"
-                                            checked
-                                        />
-                                        <label for="directBankTransfer"
-                                            >Direct bank transfer</label
-                                        >
-                                        <p class="payment-description">
-                                            Make your payment directly into our
-                                            bank account. Please use your Order
-                                            ID as the payment reference. Your
-                                            order won’t be shipped until the
-                                            funds have cleared in our account.
-                                        </p>
-                                    </div>
-                                    <div class="payment-option">
-                                        <input
-                                            type="radio"
-                                            id="checkPayments"
-                                            name="paymentMethod"
-                                            value="checkPayments"
-                                        />
-                                        <label for="checkPayments"
-                                            >Check payments</label
-                                        >
-                                    </div>
-                                    <div class="payment-option">
-                                        <input
-                                            type="radio"
-                                            id="cashOnDelivery"
-                                            name="paymentMethod"
-                                            value="cashOnDelivery"
-                                        />
-                                        <label for="cashOnDelivery"
-                                            >Cash on delivery</label
-                                        >
-                                    </div>
-                                    <div class="payment-option">
-                                        <input
-                                            type="radio"
-                                            id="paypal"
-                                            name="paymentMethod"
-                                            value="paypal"
-                                        />
-                                        <label for="paypal">PayPal</label>
-                                        <img
-                                            src="images/paypal_logo.png"
-                                            alt="PayPal Logo"
-                                            class="paypal-logo"
-                                        />
-                                    </div>
-                                </div>
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary place-order-btn"
-                                >
-                                    PLACE AN ORDER
-                                </button>
+                        <div class="summary-row">
+                            <span class="summary-label"
+                                >SUBTOTAL (PRODUCTS)</span
+                            >
+                            <span class="summary-value">$2400.00</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span class="summary-label">DEPOSIT (VEHICLE)</span>
+                            <span class="summary-value">$2400.00</span>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div
+                                class="payment-option selected"
+                                onclick="selectPayment(this)"
+                            >
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="bank-transfer"
+                                    checked
+                                />
+                                <i class="fas fa-university"></i>
+                                <span>Direct bank transfer</span>
+                            </div>
+                            <div
+                                class="payment-option"
+                                onclick="selectPayment(this)"
+                            >
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="check"
+                                />
+                                <i class="fas fa-money-check"></i>
+                                <span>Check payments</span>
+                            </div>
+                            <div
+                                class="payment-option"
+                                onclick="selectPayment(this)"
+                            >
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="cash"
+                                />
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash on delivery</span>
+                            </div>
+                            <div
+                                class="payment-option"
+                                onclick="selectPayment(this)"
+                            >
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="paypal"
+                                />
+                                <i class="fab fa-paypal"></i>
+                                <span>PayPal</span>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </section>
-        </main>
 
-        <footer>
-            <div class="container">
-                <div class="footer-col about-us">
-                    <h3>YUNGGALLERY</h3>
-                    <p>124 Coach Street, Bikini Bottom,<br />Pacific Ocean</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <button
+                            type="button"
+                            class="btn-place-order"
+                            onclick="placeOrder()"
+                        >
+                            PLACE AN ORDER
+                        </button>
+
+                        <div class="shipping-info">
+                            We ship with: DHL, FedEx, UPS<br />
+                            Payment options: Visa, Mastercard, American Express
+                        </div>
                     </div>
                 </div>
-                <div class="footer-col quick-links">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">SHOP</a></li>
-                        <li><a href="#">BLOGS</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col help-info">
-                    <h3>HELP & INFO</h3>
-                    <ul>
-                        <li><a href="#">TRACK YOUR ORDER</a></li>
-                        <li><a href="#">RETURNS POLICIES</a></li>
-                        <li><a href="#">SHIPPING + DELIVERY</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                        <li><a href="#">FAQS</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact-us">
-                    <h3>CONTACT US</h3>
-                    <p>Do you have any queries or suggestions?</p>
-                    <p>
-                        <a href="mailto:yourinfo@email.com"
-                            >yourinfo@email.com</a
-                        >
-                    </p>
-                    <p>
-                        If you need support?? Just give us a call <br />
-                        +82 111-222-333
-                    </p>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <p>
-                        We ship with:
-                        <img
-                            src="images/shipping_partners.png"
-                            alt="Shipping Partners"
-                        />
-                    </p>
-                    <p>
-                        Payment options:
-                        <img
-                            src="images/payment_options.png"
-                            alt="Payment Options"
-                        />
-                    </p>
-                    <p>&copy; 2025 YUNGGALLERY. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
+        </section>
 
-        <!-- script -->
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
-        <script type="module" src="../js/config.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/components.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const checkoutForm = document.getElementById("checkoutForm");
-
-                checkoutForm.addEventListener("submit", (e) => {
-                    e.preventDefault(); // Prevent default form submission
-
-                    // Basic form validation (you'll want more robust validation)
-                    let isValid = true;
-                    checkoutForm
-                        .querySelectorAll("input[required], textarea[required]")
-                        .forEach((input) => {
-                            if (!input.value.trim()) {
-                                input.style.borderColor = "red";
-                                isValid = false;
-                            } else {
-                                input.style.borderColor = ""; // Reset if valid
-                            }
-                        });
-
-                    if (!isValid) {
-                        alert("Please fill in all required fields.");
-                        return;
-                    }
-
-                    // Gather form data
-                    const formData = new FormData(checkoutForm);
-                    const data = {};
-                    for (let [key, value] of formData.entries()) {
-                        data[key] = value;
-                    }
-
-                    console.log("Checkout Form Data:", data);
-
-                    // In a real application, you would send this data to your backend:
-                    // fetch('/api/place-order', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'Content-Type': 'application/json',
-                    //     },
-                    //     body: JSON.stringify(data),
-                    // })
-                    // .then(response => response.json())
-                    // .then(result => {
-                    //     if (result.success) {
-                    //         alert('Order placed successfully!');
-                    //         window.location.href = '/order-confirmation.html'; // Redirect to confirmation page
-                    //     } else {
-                    //         alert('Failed to place order: ' + result.message);
-                    //     }
-                    // })
-                    // .catch(error => {
-                    //     console.error('Error:', error);
-                    //     alert('An error occurred while placing your order.');
-                    // });
-
-                    alert(
-                        "Order submitted! (This is a demo. Check console for data.)"
-                    );
-                    // You might redirect to a thank you page or show a success message
-                    // window.location.href = 'order-success.html';
-                });
-
-                // Toggle payment method description visibility
+            function selectPayment(element) {
+                // 모든 payment option에서 selected 클래스 제거
                 document
-                    .querySelectorAll('input[name="paymentMethod"]')
-                    .forEach((radio) => {
-                        radio.addEventListener("change", (e) => {
-                            document
-                                .querySelectorAll(".payment-description")
-                                .forEach((desc) => {
-                                    desc.style.display = "none";
-                                });
-                            const selectedPaymentOption =
-                                e.target.closest(".payment-option");
-                            const description =
-                                selectedPaymentOption.querySelector(
-                                    ".payment-description"
-                                );
-                            if (description) {
-                                description.style.display = "block";
-                            }
-                        });
+                    .querySelectorAll(".payment-option")
+                    .forEach((option) => {
+                        option.classList.remove("selected");
                     });
 
-                // Initially show description for the checked radio button
-                const initialCheckedRadio = document.querySelector(
-                    'input[name="paymentMethod"]:checked'
-                );
-                if (initialCheckedRadio) {
-                    const initialDescription = initialCheckedRadio
-                        .closest(".payment-option")
-                        .querySelector(".payment-description");
-                    if (initialDescription) {
-                        initialDescription.style.display = "block";
-                    }
+                // 클릭된 옵션에 selected 클래스 추가
+                element.classList.add("selected");
+
+                // 라디오 버튼 체크
+                const radio = element.querySelector('input[type="radio"]');
+                radio.checked = true;
+            }
+
+            function placeOrder() {
+                const form = document.getElementById("checkout-form");
+
+                // 폼 유효성 검사
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
                 }
+
+                // 결제 방법 확인
+                const selectedPayment = document.querySelector(
+                    'input[name="payment"]:checked'
+                );
+                if (!selectedPayment) {
+                    alert("결제 방법을 선택해주세요.");
+                    return;
+                }
+
+                // 주문 처리 로직
+                console.log(
+                    "Order placed with payment method:",
+                    selectedPayment.value
+                );
+                alert("주문이 성공적으로 접수되었습니다!");
+
+                // 실제 구현에서는 서버로 데이터 전송
+                // window.location.href = 'order-confirmation.html';
+            }
+
+            // 국가 선택에 따른 주/도 옵션 변경
+            document
+                .getElementById("country")
+                .addEventListener("change", function () {
+                    const stateSelect = document.getElementById("state");
+                    const country = this.value;
+
+                    // 기존 옵션 제거
+                    stateSelect.innerHTML = "";
+
+                    // 국가별 주/도 옵션 추가
+                    let options = [];
+                    switch (country) {
+                        case "US":
+                            options = [
+                                { value: "CA", text: "California" },
+                                { value: "NY", text: "New York" },
+                                { value: "TX", text: "Texas" },
+                                { value: "FL", text: "Florida" },
+                                { value: "IL", text: "Illinois" },
+                            ];
+                            break;
+                        case "CA":
+                            options = [
+                                { value: "ON", text: "Ontario" },
+                                { value: "QC", text: "Quebec" },
+                                { value: "BC", text: "British Columbia" },
+                                { value: "AB", text: "Alberta" },
+                            ];
+                            break;
+                        case "KR":
+                            options = [
+                                { value: "SEOUL", text: "Seoul" },
+                                { value: "BUSAN", text: "Busan" },
+                                { value: "INCHEON", text: "Incheon" },
+                                { value: "DAEGU", text: "Daegu" },
+                            ];
+                            break;
+                        default:
+                            options = [
+                                {
+                                    value: "DEFAULT",
+                                    text: "Select State/Province",
+                                },
+                            ];
+                    }
+
+                    options.forEach((option) => {
+                        const optionElement = document.createElement("option");
+                        optionElement.value = option.value;
+                        optionElement.textContent = option.text;
+                        stateSelect.appendChild(optionElement);
+                    });
+                });
+
+            // 폼 입력 시 실시간 유효성 검사
+            document.querySelectorAll(".form-input").forEach((input) => {
+                input.addEventListener("blur", function () {
+                    if (this.hasAttribute("required") && !this.value.trim()) {
+                        this.style.borderColor = "#dc3545";
+                    } else {
+                        this.style.borderColor = "#ddd";
+                    }
+                });
             });
         </script>
     </body>

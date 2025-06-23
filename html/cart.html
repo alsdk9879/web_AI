@@ -1,305 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>YUNGGALLERY - My Cart</title>
-        <link rel="stylesheet" href="../css/style2.css" />
+        <title>My Selection - YungGallery</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
         <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
-    </head>
-    <body>
-        <header>
-            <div class="top-bar">
-                <div class="container">
-                    <p>Need Help? Call Us 111-222-333</p>
-                    <p>Where Speed Meets Style - Welcome to YungGallery</p>
-                    <div class="auth-links">
-                        <a href="#">Sign In/Up</a>
-                    </div>
-                </div>
-            </div>
-            <nav class="main-nav">
-                <div class="container">
-                    <a href="../index.html" class="logo">YUNGGALLERY</a>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#" class="active">SHOP</a></li>
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">PAGES</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                    <div class="nav-icons">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-shopping-cart"></i>
-                        <i class="fas fa-heart"></i>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <style>
+            .cart-page {
+                padding: 80px 0;
+                background: #f8f8f8;
+                min-height: 100vh;
+            }
 
-        <main>
-            <section class="page-title">
-                <div class="container">
-                    <h1>MY SELECTION</h1>
-                    <p><a href="#">Home</a> > <a href="#">Shop</a></p>
-                </div>
-            </section>
+            .cart-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
 
-            <section class="cart-content">
-                <div class="container">
-                    <div class="cart-items">
-                        <div class="cart-header">
-                            <div class="item-col">ITEM</div>
-                            <div class="quantity-col">QUANTITY</div>
-                            <div class="subtotal-col">SUBTOTAL</div>
-                        </div>
-                        <div class="cart-item">
-                            <div class="item-details">
-                                <img
-                                    src="images/2025_bentley.jpg"
-                                    alt="2025 Bentley Continental GT Speed"
-                                />
-                                <div class="item-info">
-                                    <h3>2025 Bentley Continental GT Speed</h3>
-                                    <p>$383.930</p>
-                                </div>
-                            </div>
-                            <div class="item-quantity">
-                                <button class="quantity-minus">-</button>
-                                <span>1</span>
-                                <button class="quantity-plus">+</button>
-                            </div>
-                            <div class="item-subtotal">$2400.00</div>
-                            <button class="remove-item">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </div>
-                        <div class="cart-item">
-                            <div class="item-details">
-                                <img
-                                    src="images/1963_apollo.jpg"
-                                    alt="1963 Apollo 3500GT"
-                                />
-                                <div class="item-info">
-                                    <h3>1963 Apollo 3500GT</h3>
-                                    <p>Call for Price</p>
-                                </div>
-                            </div>
-                            <div class="item-quantity">
-                                <button class="quantity-minus">-</button>
-                                <span>1</span>
-                                <button class="quantity-plus">+</button>
-                            </div>
-                            <div class="item-subtotal">
-                                <span class="pending-status">Pending</span>
-                            </div>
-                            <button class="remove-item">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </div>
-                    </div>
+            .cart-header h1 {
+                font-size: 48px;
+                font-weight: 300;
+                letter-spacing: 3px;
+                margin-bottom: 20px;
+                color: #333;
+            }
 
-                    <div class="order-summary">
-                        <h2>ORDER SUMMARY</h2>
-                        <div class="summary-row">
-                            <span>TOTAL DEPOSIT (CONFIRMED VEHICLE)</span>
-                            <span class="amount">$2400.00</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>TOTAL AMOUNT TO PAY NOW</span>
-                            <span class="amount">$2400.00</span>
-                        </div>
-                        <p class="small-text">
-                            * PRICE QUOTE PENDING FOR OTHER VEHICLE(S)
-                        </p>
+            .breadcrumb {
+                color: #666;
+                font-size: 14px;
+            }
 
-                        <div class="cart-actions">
-                            <button class="btn btn-primary">UPDATE CART</button>
-                            <button class="btn btn-secondary">
-                                CONTINUE SHOPPING
-                            </button>
-                            <a href="checkout.html" class="btn btn-primary"
-                                >CONFIRM RESERVATION</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+            .breadcrumb a {
+                color: #666;
+                text-decoration: none;
+            }
 
-        <footer>
-            <div class="container">
-                <div class="footer-col about-us">
-                    <h3>YUNGGALLERY</h3>
-                    <p>124 Coach Street, Bikini Bottom,<br />Pacific Ocean</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col quick-links">
-                    <h3>QUICK LINKS</h3>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">SHOP</a></li>
-                        <li><a href="#">BLOGS</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col help-info">
-                    <h3>HELP & INFO</h3>
-                    <ul>
-                        <li><a href="#">TRACK YOUR ORDER</a></li>
-                        <li><a href="#">RETURNS POLICIES</a></li>
-                        <li><a href="#">SHIPPING + DELIVERY</a></li>
-                        <li><a href="#">CONTACT US</a></li>
-                        <li><a href="#">FAQS</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact-us">
-                    <h3>CONTACT US</h3>
-                    <p>Do you have any queries or suggestions?</p>
-                    <p>
-                        <a href="mailto:yourinfo@email.com"
-                            >yourinfo@email.com</a
-                        >
-                    </p>
-                    <p>
-                        If you need support?? Just give us a call <br />
-                        +82 111-222-333
-                    </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <p>
-                        We ship with:
-                        <img
-                            src="images/shipping_partners.png"
-                            alt="Shipping Partners"
-                        />
-                    </p>
-                    <p>
-                        Payment options:
-                        <img
-                            src="images/payment_options.png"
-                            alt="Payment Options"
-                        />
-                    </p>
-                    <p>&copy; 2025 YUNGGALLERY. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
+            .cart-content {
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+            }
 
-        <!-- script -->
-        <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
-        <script type="module" src="../js/config.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                // Handle quantity changes
-                document
-                    .querySelectorAll(".item-quantity button")
-                    .forEach((button) => {
-                        button.addEventListener("click", (e) => {
-                            const itemQuantityDiv =
-                                e.target.closest(".item-quantity");
-                            const quantitySpan =
-                                itemQuantityDiv.querySelector("span");
-                            let currentQuantity = parseInt(
-                                quantitySpan.textContent
-                            );
+            .cart-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 40px;
+            }
 
-                            if (e.target.classList.contains("quantity-plus")) {
-                                currentQuantity++;
-                            } else if (
-                                e.target.classList.contains("quantity-minus") &&
-                                currentQuantity > 1
-                            ) {
-                                currentQuantity--;
-                            }
-                            quantitySpan.textContent = currentQuantity;
-                            // In a real application, you would also:
-                            // 1. Update the subtotal for this item.
-                            // 2. Update the total deposit/amount in the order summary.
-                            // 3. Potentially send an AJAX request to update the cart on the server.
-                            updateCartTotals(); // Call a function to recalculate totals
-                        });
-                    });
+            .cart-table thead {
+                border-bottom: 2px solid #eee;
+            }
 
-                // Handle remove item
-                document.querySelectorAll(".remove-item").forEach((button) => {
-                    button.addEventListener("click", (e) => {
-                        const cartItem = e.target.closest(".cart-item");
-                        if (
-                            confirm(
-                                "Are you sure you want to remove this item from your cart?"
-                            )
-                        ) {
-                            cartItem.remove();
-                            // In a real application, you would also:
-                            // 1. Send an AJAX request to remove the item from the server's cart.
-                            // 2. Update the total deposit/amount in the order summary.
-                            updateCartTotals(); // Call a function to recalculate totals
-                        }
-                    });
-                });
+            .cart-table th {
+                padding: 20px 15px;
+                text-align: left;
+                font-weight: 600;
+                color: #333;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
 
-                // Function to update cart totals (placeholder logic)
-                function updateCartTotals() {
-                    let totalDeposit = 0;
-                    document.querySelectorAll(".cart-item").forEach((item) => {
-                        // Get item price (you'd need to store this as a data attribute or from a product object)
-                        // For now, let's assume '2400.00' is the only confirmed price from the image.
-                        const subtotalElement =
-                            item.querySelector(".item-subtotal");
-                        if (
-                            subtotalElement &&
-                            !subtotalElement.classList.contains(
-                                "pending-status"
-                            )
-                        ) {
-                            const priceText =
-                                subtotalElement.textContent.replace("$", "");
-                            const itemPrice = parseFloat(priceText);
-                            const quantity = parseInt(
-                                item.querySelector(".item-quantity span")
-                                    .textContent
-                            );
-                            totalDeposit += itemPrice * quantity;
-                        }
-                    });
+            .cart-table td {
+                padding: 30px 15px;
+                border-bottom: 1px solid #eee;
+                vertical-align: middle;
+            }
 
-                    document.querySelector(
-                        ".order-summary .summary-row .amount"
-                    ).textContent = `$${totalDeposit.toFixed(2)}`;
-                    // Assuming "TOTAL AMOUNT TO PAY NOW" also reflects the deposit for confirmed vehicles
-                    document.querySelector(
-                        ".order-summary .summary-row:nth-child(2) .amount"
-                    ).textContent = `$${totalDeposit.toFixed(2)}`;
+            .product-info {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
 
-                    // Enable/disable "Confirm Reservation" button based on cart items
-                    const confirmReservationBtn = document.querySelector(
-                        ".cart-actions a.btn-primary"
-                    );
-                    if (document.querySelectorAll(".cart-item").length === 0) {
-                        confirmReservationBtn.style.pointerEvents = "none";
-                        confirmReservationBtn.style.opacity = "0.5";
-                    } else {
-                        confirmReservationBtn.style.pointerEvents = "auto";
-                        confirmReservationBtn.style.opacity = "1";
-                    }
+            .product-image {
+                width: 120px;
+                height: 80px;
+                border-radius: 8px;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+
+            .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .product-details h4 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: #333;
+            }
+
+            .product-price {
+                color: #ff6b35;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .quantity-controls {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .quantity-btn {
+                width: 35px;
+                height: 35px;
+                border: 1px solid #ddd;
+                background: white;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .quantity-btn:hover {
+                background: #ff6b35;
+                color: white;
+                border-color: #ff6b35;
+            }
+
+            .quantity-input {
+                width: 60px;
+                text-align: center;
+                border: 1px solid #ddd;
+                padding: 8px;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            .subtotal {
+                font-size: 18px;
+                font-weight: 600;
+                color: #ff6b35;
+            }
+
+            .remove-btn {
+                background: none;
+                border: none;
+                color: #999;
+                font-size: 20px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+            .remove-btn:hover {
+                color: #ff6b35;
+            }
+
+            .cart-summary {
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .summary-title {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 30px;
+                color: #333;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .summary-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .summary-row:last-child {
+                border-bottom: none;
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 2px solid #eee;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .summary-label {
+                font-size: 16px;
+                color: #666;
+            }
+
+            .summary-value {
+                font-size: 16px;
+                font-weight: 600;
+                color: #ff6b35;
+            }
+
+            .pending-note {
+                color: #ff6b35;
+                font-size: 14px;
+                margin-top: 10px;
+                font-style: italic;
+            }
+
+            .cart-actions {
+                display: flex;
+                gap: 15px;
+                margin-top: 30px;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+                text-align: center;
+            }
+
+            .btn-primary {
+                background: #ff6b35;
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background: #e55a2b;
+                transform: translateY(-2px);
+            }
+
+            .btn-secondary {
+                background: transparent;
+                color: #ff6b35;
+                border: 2px solid #ff6b35;
+            }
+
+            .btn-secondary:hover {
+                background: #ff6b35;
+                color: white;
+            }
+
+            .btn-confirm {
+                background: #28a745;
+                color: white;
+            }
+
+            .btn-confirm:hover {
+                background: #218838;
+            }
+
+            @media (max-width: 768px) {
+                .cart-content {
+                    padding: 20px;
+                    overflow-x: auto;
                 }
 
-                // Initial calculation when the page loads
-                updateCartTotals();
-            });
+                .cart-table {
+                    min-width: 600px;
+                }
+
+                .product-info {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+
+                .cart-actions {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header"></div>
+
+        <!-- Nav -->
+        <div id="nav"></div>
+
+        <!-- Cart Page -->
+        <section class="cart-page">
+            <div class="container">
+                <!-- Cart Header -->
+                <div class="cart-header">
+                    <h1>MY SELECTION</h1>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a> > Shop
+                    </div>
+                </div>
+
+                <!-- Cart Content -->
+                <div class="cart-content">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>ITEM</th>
+                                <th>QUANTITY</th>
+                                <th>SUBTOTAL</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                                alt="2025 Bentley Continental GT Speed"
+                                            />
+                                        </div>
+                                        <div class="product-details">
+                                            <h4>
+                                                2025 Bentley Continental GT
+                                                Speed
+                                            </h4>
+                                            <div class="product-price">
+                                                $383,930
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button
+                                            class="quantity-btn"
+                                            onclick="decreaseQuantity(this)"
+                                        >
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input
+                                            type="number"
+                                            class="quantity-input"
+                                            value="1"
+                                            min="1"
+                                            onchange="updateSubtotal(this)"
+                                        />
+                                        <button
+                                            class="quantity-btn"
+                                            onclick="increaseQuantity(this)"
+                                        >
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtotal">$2400.00</div>
+                                </td>
+                                <td>
+                                    <button
+                                        class="remove-btn"
+                                        onclick="removeItem(this)"
+                                    >
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                                alt="1963 Apollo 3500GT"
+                                            />
+                                        </div>
+                                        <div class="product-details">
+                                            <h4>1963 Apollo 3500GT</h4>
+                                            <div class="product-price">
+                                                Call for Price
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button
+                                            class="quantity-btn"
+                                            onclick="decreaseQuantity(this)"
+                                        >
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input
+                                            type="number"
+                                            class="quantity-input"
+                                            value="1"
+                                            min="1"
+                                            onchange="updateSubtotal(this)"
+                                        />
+                                        <button
+                                            class="quantity-btn"
+                                            onclick="increaseQuantity(this)"
+                                        >
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="subtotal">Pending</div>
+                                </td>
+                                <td>
+                                    <button
+                                        class="remove-btn"
+                                        onclick="removeItem(this)"
+                                    >
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3 class="summary-title">ORDER SUMMARY</h3>
+
+                    <div class="summary-row">
+                        <span class="summary-label"
+                            >TOTAL DEPOSIT (CONFIRMED VEHICLE)</span
+                        >
+                        <span class="summary-value">$2400.00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="summary-label"
+                            >TOTAL AMOUNT TO PAY NOW</span
+                        >
+                        <span class="summary-value">$2400.00</span>
+                    </div>
+
+                    <div class="pending-note">
+                        * PRICE QUOTE PENDING FOR OTHER VEHICLE(S)
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="summary-label">TOTAL</span>
+                        <span class="summary-value">$2400.00</span>
+                    </div>
+
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary">UPDATE CART</button>
+                        <a href="index.html" class="btn btn-secondary"
+                            >CONTINUE SHOPPING</a
+                        >
+                        <a href="checkout.html" class="btn btn-confirm"
+                            >CONFIRM RESERVATION</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/components.js"></script>
+        <script>
+            function increaseQuantity(btn) {
+                const input = btn.previousElementSibling;
+                const currentValue = parseInt(input.value);
+                input.value = currentValue + 1;
+                updateSubtotal(input);
+            }
+
+            function decreaseQuantity(btn) {
+                const input = btn.nextElementSibling;
+                const currentValue = parseInt(input.value);
+                if (currentValue > 1) {
+                    input.value = currentValue - 1;
+                    updateSubtotal(input);
+                }
+            }
+
+            function updateSubtotal(input) {
+                // 실제 구현에서는 상품 가격을 기반으로 계산
+                console.log("Quantity updated:", input.value);
+                // 여기서 총합계 업데이트 로직 추가
+            }
+
+            function removeItem(btn) {
+                const row = btn.closest("tr");
+                row.remove();
+                // 총합계 재계산 로직 추가
+                console.log("Item removed");
+            }
         </script>
     </body>
 </html>
