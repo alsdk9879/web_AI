@@ -1,9 +1,22 @@
+function getRelativePath(file) {
+    let path = "";
+    if (location.pathname.includes("/html/")) {
+        path = "../components/" + file;
+    } else {
+        path = "components/" + file;
+    }
+    return path;
+}
+
+// 사용
+fetch(getRelativePath("header.html"));
+
 /* Header */
 // HTML 로드하고 렌더링
 async function renderHeader() {
     try {
         // header.html 파일을 fetch로 불러오기
-        const response = await fetch("/components/header.html");
+        const response = await fetch(getRelativePath("header.html"));
         const headerHTML = await response.text();
 
         // HTML 삽입
@@ -218,7 +231,7 @@ function initHeaderEvents() {
 async function renderNav() {
     try {
         // nav.html 파일을 fetch로 불러오기
-        const response = await fetch("/components/nav.html");
+        const response = await fetch(getRelativePath("nav.html"));
         const navHTML = await response.text();
 
         // HTML 삽입
@@ -316,7 +329,7 @@ function performSearch(query) {
 async function renderFooter() {
     try {
         // footer.html 파일을 fetch로 불러오기
-        const response = await fetch("/components/footer.html");
+        const response = await fetch(getRelativePath("footer.html"));
         const footerHTML = await response.text();
 
         // HTML 삽입
